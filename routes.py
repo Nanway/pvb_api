@@ -44,6 +44,7 @@ def predict():
     response["Probability"] = f'{probability:.2f}'
     response["Failed"] = False
     # Remove temp file
+    print("Finished predicting")
     os.remove(img_path)
 
     # Pass back
