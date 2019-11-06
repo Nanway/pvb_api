@@ -1,0 +1,7 @@
+# [START runtime]
+runtime: python37
+# [END runtime]
+entrypoint: python run.py
+# [START handlers]
+
+# [END handlers]
