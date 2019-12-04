@@ -4,7 +4,11 @@ import os
 from pathlib import Path
 import tensorflow as tf
 
-graph = tf.get_default_graph()
+#graph = tf.get_default_graph()
+
+@app.route('/')
+def base():
+    return "yeetdaddy we r in"
 
 @app.route('/api/make_prediction', methods=['POST'])
 def predict():
@@ -37,9 +41,9 @@ def predict():
     uploaded_image.save(str(img_path))
     print(img_path)
     # Check if it is an image
-    global graph
-    with graph.as_default():
-        prediction, probability = classifier.make_prediction(img_path)
+    #global graph
+    #with graph.as_default():
+    prediction, probability = classifier.make_prediction(img_path)
     response["Prediction"] = prediction
     response["Probability"] = f'{probability:.2f}'
     response["Failed"] = False

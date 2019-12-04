@@ -10,4 +10,5 @@ print("model loaded")
 UPLOAD_FOLDER = classifier.cwd
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg', 'png', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['CORS_HEADERS'] = 'Content-Type'
 
